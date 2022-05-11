@@ -43,6 +43,15 @@ public class Servicio {
         this.compleado = compleado;
     }
 
+    public Servicio(String nombreCliente, String descripcion, String telefonoContacto, String direccion,
+            boolean compleado) {
+        this.nombreCliente = nombreCliente;
+        this.descripcion = descripcion;
+        this.telefonoContacto = telefonoContacto;
+        this.direccion = direccion;
+        this.compleado = compleado;
+    }
+
     public Long getId() {
         return id;
     }
