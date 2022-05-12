@@ -27,29 +27,29 @@ public class Servicio {
     @Column(name = "direccion", nullable = false, length = 50)
     private String direccion;
 
-    @Column(name = "compleado", nullable = false)
-    private boolean compleado;
+    @Column(name = "completado", nullable = false)
+    private boolean completado;
 
     public Servicio() {
     }
 
     public Servicio(Long id, String nombreCliente, String descripcion, String telefonoContacto, String direccion,
-            boolean compleado) {
+            boolean completado) {
         this.id = id;
         this.nombreCliente = nombreCliente;
         this.descripcion = descripcion;
         this.telefonoContacto = telefonoContacto;
         this.direccion = direccion;
-        this.compleado = compleado;
+        this.completado = completado;
     }
 
     public Servicio(String nombreCliente, String descripcion, String telefonoContacto, String direccion,
-            boolean compleado) {
+            boolean completado) {
         this.nombreCliente = nombreCliente;
         this.descripcion = descripcion;
         this.telefonoContacto = telefonoContacto;
         this.direccion = direccion;
-        this.compleado = compleado;
+        this.completado = completado;
     }
 
     public Long getId() {
@@ -92,12 +92,12 @@ public class Servicio {
         this.direccion = direccion;
     }
 
-    public boolean isCompleado() {
-        return compleado;
+    public boolean isCompletado() {
+        return completado;
     }
 
-    public void setCompleado(boolean compleado) {
-        this.compleado = compleado;
+    public void setCompletado(boolean compleado) {
+        this.completado = compleado;
     }
 
 }

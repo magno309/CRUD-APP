@@ -20,13 +20,12 @@ public class CrudApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		// TODO Auto-generated method stub
-		Servicio servicio1 = new Servicio("nombreCliente1", "descripcion1", "1234567890", "direccion1", true);
-		repositorio.save(servicio1);
-		Servicio servicio2 = new Servicio("nombreCliente2", "descripcion2", "1234567890", "direccion2", false);
-		repositorio.save(servicio2);
-		Servicio servicio3 = new Servicio("nombreCliente3", "descripcion3", "1234567890", "direccion3", true);
-		repositorio.save(servicio3);
+		//Servicio servicio1 = new Servicio("nombreCliente1", "descripcion1", "1234567890", "direccion1", true);
+		//repositorio.save(servicio1);
+		//Servicio servicio2 = new Servicio("nombreCliente2", "descripcion2", "1234567890", "direccion2", false);
+		//repositorio.save(servicio2);
+		//Servicio servicio3 = new Servicio("nombreCliente3", "descripcion3", "1234567890", "direccion3", true);
+		//repositorio.save(servicio3);
 	}
 
 }

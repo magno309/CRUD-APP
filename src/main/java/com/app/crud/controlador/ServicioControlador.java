@@ -1,5 +1,6 @@
 package com.app.crud.controlador;
 
+import com.app.crud.entidad.Servicio;
 import com.app.crud.servicio.ServicioServicio;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +17,14 @@ public class ServicioControlador {
     @GetMapping({"/servicios", "/"})
     public String listarServicios(Model modelo) {
         modelo.addAttribute("servicios", servicioServicio.listarServicios());
-        return "servicios";
+        return "Servicios";
     }
 
+    @GetMapping("/servicios/nuevo")
+    public String crearServicioFormulario(Model modelo){
+        Servicio servicio = new Servicio();
+        modelo.addAttribute("servicio", servicio);
+        return "CrearServicio";
+    }
 
 }
