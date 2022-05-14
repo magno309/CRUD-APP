@@ -18,5 +18,25 @@ public class ServicioServicioImp implements ServicioServicio {
     public List<Servicio> listarServicios() {
         return servicioRepositorio.findAll();
     }
+
+    @Override
+    public Servicio guardarServicio(Servicio servicio) {
+        return servicioRepositorio.save(servicio);
+    }
+
+    @Override
+    public Servicio obtenerUno(Long id) {
+        return servicioRepositorio.findById(id).get();
+    }
+
+    @Override
+    public Servicio actualizarServicio(Servicio servicio) {
+        return servicioRepositorio.save(servicio);
+    }
+
+    @Override
+    public void eliminarServicio(Long id) {
+        servicioRepositorio.deleteById(id);
+    }
     
 }
