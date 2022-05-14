@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Editar servicio</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/servicios">Puertas Electricas del Centro</a>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" style="color: white;" th:href="@{/servicios}">Control de servicios</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="container justify-content-center container-fluid card">
+                <h1 class="text-center">Editar servicio:</h1>
+                <div class="card-body">
+                    <form th:action="@{/editarServicio/{id}(id=${servicio.id})}" th:object="${servicio}"
+                        method="post">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="txtCliente">Nombre del cliente:</label>
+                                    <input type="text" class="form-control" id="txtCliente" th:field="*{nombreCliente}"
+                                        requiered>
+                                </div>
+                                <div class="form-group">
+                                    <label for="txtDireccion">Dirección:</label>
+                                    <input type="text" class="form-control" id="txtDireccion" th:field="*{direccion}"
+                                        required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="txtTelefono">Teléfono:</label>
+                                    <input type="text" class="form-control" id="txtTelefono"
+                                        th:field="*{telefonoContacto}" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="textAreaDescripcion">Descripción:</label>
+                                    <textarea class="form-control" id="textAreaDescripcion" rows="6"
+                                        th:field="*{descripcion}" placeholder="Detalles del servicio..."
+                                        required></textarea>
+                                </div>
+                            </div>
+                            <div class="mt-3 box-footer">
+                                <button class="btn btn-success">Guardar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+
+</html>

@@ -36,13 +36,13 @@ public class ServicioControlador {
         return "redirect:/servicios";
     }
 
-    @GetMapping("/servicios/editar")
+    @GetMapping("/servicios/editar/{id}")
     public String editarServicio(@PathVariable Long id, Model modelo) {
         modelo.addAttribute("servicio", servicioServicio.obtenerUno(id));
         return "EditarServicio";
     }
 
-    @PostMapping("/servicios/{id}")
+    @PostMapping("/editarServicio/{id}")
     public String actualizarServicio(@PathVariable Long id, @ModelAttribute("servicio") Servicio servicio,
             Model modelo) {
         Servicio servicioExistente = servicioServicio.obtenerUno(id);
@@ -52,6 +52,14 @@ public class ServicioControlador {
         servicioExistente.setDireccion(servicio.getDireccion());
         servicioExistente.setTelefonoContacto(servicio.getTelefonoContacto());
 
+        servicioServicio.actualizarServicio(servicioExistente);
+        return "redirect:/servicios";
+    }
+
+    @GetMapping("/completarServicio/{id}")
+    public String completarServicio(@PathVariable Long id) {
+        Servicio servicioExistente = servicioServicio.obtenerUno(id);
+        servicioExistente.setCompletado(!servicioExistente.isCompletado());
         servicioServicio.actualizarServicio(servicioExistente);
         return "redirect:/servicios";
     }
